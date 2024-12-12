@@ -1,61 +1,64 @@
-import React from 'react'
-import Message from './message/Message'
-import MessageSender from './message-sender/MessageSender'
-import s2 from '../../s1-main/App.module.css'
-import FriendMessage from './friend-message/FriendMessage'
-import avatar from './avatar.png'
+import React from 'react';
+import Message from './message/Message';
+import MessageSender from './message-sender/MessageSender';
+import FriendMessage from './friend-message/FriendMessage';
+import s2 from '../../s1-main/App.module.css';
+import avatar from './avatar.png';
 
-/*
-* 1 - описать тип MessageType
-* 2 - описать тип MessagePropsType в файле Message.tsx
-* 3 - в файле Message.tsx отобразить приходящие данные
-* 4 - выполнить пункты 2, 3 в файле FriendMessage.tsx
-* 5 - сделать стили в соответствии с дизайном
-* */
+/* Типизация для сообщений */
+export type MessageType = {
+    id: number;
+    user: {
+        avatar: string;
+        name: string;
+    };
+    message: {
+        text: string;
+        time: string;
+    };
+};
 
-// нужно создать правильный тип вместо any
-export type MessageType = any
-
-// структуру объекта не менять
+/* Пример данных для сообщения и его "друга" */
 export const message0: MessageType = {
     id: 0,
     user: {
-        avatar: avatar, // можно менять
-        name: 'Some Name',  // можно менять
+        avatar: avatar,
+        name: 'Some Name',
     },
     message: {
-        text: 'some textsome textsome textsome textsome textsome textsome text', // можно менять
-        time: '22:00', // можно менять
+        text: 'This is a sample text message for testing.',
+        time: '22:00',
     },
-}
+};
+
 export const friendMessage0: MessageType = {
     id: 100,
     user: {
-        avatar: avatar, // можно менять
-        name: 'Friend Name', // можно менять
+        avatar: avatar,
+        name: 'Friend Name',
     },
     message: {
-        text: 'зеркальное сообщение для тренировки css', // можно менять
-        time: '22:00', // можно менять
+        text: 'This is a mirrored sample message for CSS practice.',
+        time: '22:00',
     },
-}
+};
 
 const HW1 = () => {
     return (
         <div id={'hw1'}>
             <div className={s2.hwTitle}>Homework #1</div>
             <div className={s2.hw}>
-                {/*проверка отображения (не менять)*/}
                 <div>
+                    {/* Сообщения */}
                     <Message message={message0} />
                     <FriendMessage message={friendMessage0} />
                 </div>
 
-                {/*для автоматической проверки дз (не менять)*/}
+                {/* Автоматическая проверка */}
                 <MessageSender M={Message} />
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default HW1
+export default HW1;
