@@ -1,6 +1,5 @@
 import React from 'react';
 import { AffairType } from '../../HW2';
-import s from './Affair.module.css';
 
 type AffairPropsType = {
     affair: AffairType;
@@ -8,29 +7,12 @@ type AffairPropsType = {
 };
 
 function Affair(props: AffairPropsType) {
-    const deleteCallback = () => {
-        props.deleteAffairCallback(props.affair._id);
-    };
-
-    const nameClass = `${s.name} ${s[props.affair.priority]}`;
-    const buttonClass = `${s.closeButton} ${s[props.affair.priority]}`;
-    const affairClass = `${s.affair} ${s[props.affair.priority]}`;
+    const deleteCallback = () => props.deleteAffairCallback(props.affair._id);
 
     return (
-        <div id={`hw2-affair-${props.affair._id}`} className={affairClass}>
-            <div id={`hw2-name-${props.affair._id}`} className={nameClass}>
-                {props.affair.name}
-            </div>
-            <div id={`hw2-priority-${props.affair._id}`} hidden>
-                {props.affair.priority}
-            </div>
-            <button
-                id={`hw2-button-delete-${props.affair._id}`}
-                className={buttonClass}
-                onClick={deleteCallback}
-            >
-                X
-            </button>
+        <div>
+            <div>{props.affair.name}</div>
+            <button onClick={deleteCallback}>X</button>
         </div>
     );
 }

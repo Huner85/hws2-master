@@ -16,36 +16,19 @@ function Affairs(props: AffairsPropsType) {
     const setMiddle = () => props.setFilter('middle');
     const setLow = () => props.setFilter('low');
 
-    const cnAll = `${s.button} ${props.filter === 'all' ? s.active : ''}`;
-    const cnHigh = `${s.button} ${props.filter === 'high' ? s.active : ''}`;
-    const cnMiddle = `${s.button} ${props.filter === 'middle' ? s.active : ''}`;
-    const cnLow = `${s.button} ${props.filter === 'low' ? s.active : ''}`;
+    const mappedAffairs = props.data.map(a => (
+        <Affair key={a._id} affair={a} deleteAffairCallback={props.deleteAffairCallback} />
+    ));
 
     return (
         <div>
             <div className={s.buttonContainer}>
-                <button id="hw2-button-all" onClick={setAll} className={cnAll}>
-                    All
-                </button>
-                <button id="hw2-button-high" onClick={setHigh} className={cnHigh}>
-                    High
-                </button>
-                <button id="hw2-button-middle" onClick={setMiddle} className={cnMiddle}>
-                    Middle
-                </button>
-                <button id="hw2-button-low" onClick={setLow} className={cnLow}>
-                    Low
-                </button>
+                <button onClick={setAll}>All</button>
+                <button onClick={setHigh}>High</button>
+                <button onClick={setMiddle}>Middle</button>
+                <button onClick={setLow}>Low</button>
             </div>
-            <div className={s.affairs}>
-                {props.data.map((a) => (
-                    <Affair
-                        key={a._id}
-                        affair={a}
-                        deleteAffairCallback={props.deleteAffairCallback}
-                    />
-                ))}
-            </div>
+            <div>{mappedAffairs}</div>
         </div>
     );
 }
