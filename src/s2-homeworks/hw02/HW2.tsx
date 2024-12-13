@@ -20,7 +20,7 @@ const defaultAffairs: AffairType[] = [
     { _id: 5, name: 'HTML & CSS', priority: 'middle' },
 ];
 
-// Функция фильтрации
+
 export const filterAffairs = (affairs: AffairType[], filter: FilterType): AffairType[] => {
     if (filter === 'all') return affairs;
     return affairs.filter((a) => a.priority === filter);

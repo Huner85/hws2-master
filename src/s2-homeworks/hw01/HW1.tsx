@@ -5,7 +5,7 @@ import FriendMessage from './friend-message/FriendMessage';
 import s2 from '../../s1-main/App.module.css';
 import avatar from './avatar.png';
 
-/* Типизация для сообщений */
+
 export type MessageType = {
     id: number;
     user: {
@@ -18,7 +18,7 @@ export type MessageType = {
     };
 };
 
-/* Пример данных для сообщения и его "друга" */
+
 export const message0: MessageType = {
     id: 0,
     user: {
@@ -54,7 +54,6 @@ const HW1 = () => {
                     <FriendMessage message={friendMessage0} />
                 </div>
 
-                {/* Автоматическая проверка */}
                 <MessageSender M={Message} />
             </div>
         </div>
