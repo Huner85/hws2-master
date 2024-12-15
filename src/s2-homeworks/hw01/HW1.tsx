@@ -23,11 +23,11 @@ export const message0: MessageType = {
     id: 0,
     user: {
         avatar: avatar,
-        name: 'Some Name',
+        name: 'Дмитрий',
     },
     message: {
-        text: 'This is a sample text message for testing.',
-        time: '22:00',
+        text: 'Привет. Как жизнь молодая?',
+        time: '21:50',
     },
 };
 
@@ -35,10 +35,10 @@ export const friendMessage0: MessageType = {
     id: 100,
     user: {
         avatar: avatar,
-        name: 'Friend Name',
+        name: 'Владимир',
     },
     message: {
-        text: 'This is a mirrored sample message for CSS practice.',
+        text: 'Регулярно :-)',
         time: '22:00',
     },
 };
