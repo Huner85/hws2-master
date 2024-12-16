@@ -4,6 +4,7 @@ import MessageSender from './message-sender/MessageSender';
 import FriendMessage from './friend-message/FriendMessage';
 import s2 from '../../s1-main/App.module.css';
 import avatar from './avatar.png';
+import avatar1 from './avatar1.png';
 
 
 export type MessageType = {
@@ -22,7 +23,7 @@ export type MessageType = {
 export const message0: MessageType = {
     id: 0,
     user: {
-        avatar: avatar,
+        avatar: avatar1,
         name: 'Дмитрий',
     },
     message: {
