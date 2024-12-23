@@ -22,43 +22,43 @@ const Greeting: React.FC<GreetingPropsType> = ({
                                                    totalUsers,
                                                    lastUserName,
                                                }) => {
-    const inputClass = error ? s.errorInput : s.input;
+    const inputClass = error ? s.errorInput : s.input; // стили в зависимости от ошибки
 
     return (
-        <div id="hw3-form" className={s.greetingForm}>
+        <div id={'hw3-form'} className={s.greetingForm}>
             <div className={s.text}>
                 {'Людей добавили: '}
-                <span id="hw3-users-total">{totalUsers}</span>
+                <span id={'hw3-users-total'}>{totalUsers}</span>
             </div>
 
             <div className={s.inputAndButtonContainer}>
                 <div>
                     <input
-                        id="hw3-input"
+                        id={'hw3-input'}
                         value={name}
                         onChange={setNameCallback}
                         className={inputClass}
                         onKeyDown={onEnter}
                         onBlur={onBlur}
                     />
-                    <div id="hw3-error" className={s.error}>
+                    <div id={'hw3-error'} className={s.error}>
                         {error}
                     </div>
                 </div>
 
                 <button
-                    id="hw3-button"
+                    id={'hw3-button'}
                     onClick={addUser}
                     className={s.button}
                     disabled={!name.trim()}
                 >
-                    Добавить
+                    add
                 </button>
             </div>
 
             {lastUserName && (
                 <div className={s.greeting}>
-                    Привет <span id="hw3-last-user">{lastUserName}</span>!
+                    Привет <span id={'hw3-last-user'}>{lastUserName}</span>!
                 </div>
             )}
         </div>

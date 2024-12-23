@@ -6,7 +6,7 @@ import s from './Affairs.module.css';
 type AffairsPropsType = {
     data: AffairType[];
     setFilter: (filter: FilterType) => void;
-    deleteAffairCallback: (id: number) => void;
+    deleteAffairCallback: (_id: number) => void;
     filter: FilterType;
 };
 

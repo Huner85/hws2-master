@@ -19,21 +19,18 @@ export const pureAddUserCallback = (
     setUsers([...users, user]);
 };
 
-const HW3: React.FC = () => {
-    const [users, setUsers] = useState<UserType[]>([]);
+const HW3 = () => {
+    const [users, setUsers] = useState<UserType[]>([]); // массив пользователей
 
     const addUserCallback = (name: string) => {
         pureAddUserCallback(name, setUsers, users);
     };
 
     return (
-        <div id="hw3">
+        <div id={'hw3'}>
             <div className={s2.hwTitle}>Homework #3</div>
             <div className={s2.hw}>
-                <GreetingContainer
-                    users={users}
-                    addUserCallback={addUserCallback}
-                />
+                <GreetingContainer users={users} addUserCallback={addUserCallback} />
             </div>
         </div>
     );
