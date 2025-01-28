@@ -28,8 +28,9 @@ const Clock: React.FC = () => {
         setShow(false);
     };
 
-    const stringTime = date.toLocaleTimeString('en-US', { hour12: false }); // Часы24:минуты:секунды
-    const stringDate = date.toLocaleDateString('en-GB'); // День.месяц.год
+    // Форматируем значения
+    const stringTime = date.toLocaleTimeString('ru-RU', { hour12: false }); // Часы:Минуты:Секунды
+    const stringDate = date.toLocaleDateString('ru-RU'); // День.Месяц.Год
     const stringDay = date.toLocaleDateString('en-US', { weekday: 'long' }); // День недели на английском
     const stringMonth = date.toLocaleDateString('en-US', { month: 'long' }); // Месяц на английском
 
