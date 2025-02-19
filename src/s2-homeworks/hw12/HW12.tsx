@@ -1,31 +1,34 @@
-import React, { useEffect } from 'react';
-import s from './HW12.module.css';
-import s2 from '../../s1-main/App.module.css';
-import SuperSelect from '../hw07/common/c5-SuperSelect/SuperSelect';
-import { useDispatch, useSelector } from 'react-redux';
-import { changeThemeId } from './bll/themeReducer';
-import { AppStateType } from '../../s1-main/bll/store'; // Подключите тип состояния из вашего Redux store
+import React, {useEffect} from 'react'
+import s from './HW12.module.css'
+import s2 from '../../s1-main/App.module.css'
+import SuperSelect from '../hw07/common/c5-SuperSelect/SuperSelect'
+import {useDispatch, useSelector} from 'react-redux'
+import {changeThemeId} from './bll/themeReducer'
+
+/*
+* 1 - в файле themeReducer.ts написать нужные типы вместо any, дописать редьюсер
+* 2 - получить themeId из редакса
+* 3 - дописать тип и логику функции change
+* 4 - передать пропсы в SuperSelect
+* */
 
 const themes = [
-    { id: 1, value: 'light' },
-    { id: 2, value: 'blue' },
-    { id: 3, value: 'dark' },
-];
+    {id: 1, value: 'light'},
+    {id: 2, value: 'blue'},
+    {id: 3, value: 'dark'},
+]
 
 const HW12 = () => {
-    // Получение themeId из Redux state
-    const themeId = useSelector((state: AppStateType) => state.theme.themeId);
-    const dispatch = useDispatch();
+    // взять ид темы из редакса
+    const themeId = 1
 
-    // Функция для изменения темы
-    const change = (id: number) => {
-        dispatch(changeThemeId(id));
-    };
+    const change = (id: any) => { // дописать функцию
+
+    }
 
     useEffect(() => {
-        // Смена темы через data-theme
-        document.documentElement.dataset.theme = themeId.toString();
-    }, [themeId]);
+        document.documentElement.dataset.theme = themeId + ''
+    }, [themeId])
 
     return (
         <div id={'hw12'}>
@@ -37,13 +40,12 @@ const HW12 = () => {
                 <SuperSelect
                     id={'hw12-select-theme'}
                     className={s.select}
-                    options={themes}
-                    value={themeId}
-                    onChangeOption={change}
+                    // сделать переключение тем
+
                 />
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default HW12;
+export default HW12
