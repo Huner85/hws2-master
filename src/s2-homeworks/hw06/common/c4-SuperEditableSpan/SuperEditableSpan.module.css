@@ -1,0 +1,22 @@
+.spanBlock {
+    display: flex;
+    align-items: center;
+}
+
+.pen {
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.input {
+    width: 100%;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.span {
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+}
