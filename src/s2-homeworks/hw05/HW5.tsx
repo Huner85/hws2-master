@@ -1,23 +1,22 @@
-import React from 'react'
-import { HashRouter } from 'react-router-dom'
-import { Layout } from './layout/Layout'
-import Pages from './Pages'
+import React, { useState } from 'react'
 
-/*
-* 1 - в файле Pages.tsx дописать роуты на все страницы
-* 2 - в файле Sidebar.tsx дописать className так чтоб вешался класс s.active когда мы уже на соответствующей странице
-* 3 - застилизовать хэдэр и сайдбар в соответствии с дизайном
-* */
+const HW5 = () => {
+    const [isOpen, setIsOpen] = useState(false)
 
-function HW5() {
     return (
-        <HashRouter>
-            {/*в gh-pages лучше работает HashRouter, с BrowserRouter скорее всего не пройдёт тест*/}
-            <Layout>
-                <Pages />
-            </Layout>
-        </HashRouter>
+        <div id="hw5-burger-menu">
+            <button id="hw5-menu-button" onClick={() => setIsOpen(!isOpen)}>
+                ☰
+            </button>
+
+            {isOpen && (
+                <div id="hw5-menu">
+                    <a href="#hw12">HW12</a>
+                </div>
+            )}
+        </div>
     )
 }
 
 export default HW5
+
