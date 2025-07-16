@@ -1,43 +1,47 @@
-import React, { SelectHTMLAttributes, DetailedHTMLProps, ChangeEvent } from 'react';
-import s from './SuperSelect.module.css';
+// src/s2-homeworks/hw07/common/c5-SuperSelect/SuperSelect.tsx
 
-type DefaultSelectPropsType = DetailedHTMLProps<
-    SelectHTMLAttributes<HTMLSelectElement>,
-    HTMLSelectElement
->;
+import React from 'react'
 
-type SuperSelectPropsType = DefaultSelectPropsType & {
-    options?: { id: number; value: string }[];
-    onChangeOption?: (option: any) => void;
-};
+type OptionType = {
+    id: number
+    value: string
+}
 
-const SuperSelect: React.FC<SuperSelectPropsType> = ({
-                                                         options,
-                                                         className,
-                                                         onChangeOption,
-                                                         ...restProps
-                                                     }) => {
-    const mappedOptions = options
-        ? options.map((o) => (
-            <option id={'hw7-option-' + o.id} className={s.option} key={o.id} value={o.id}>
-                {o.value}
-            </option>
-        ))
-        : [];
+type SuperSelectProps = {
+    options?: OptionType[]
+    value?: number
+    onChangeOption?: (id: number) => void
+    className?: string
+    id?: string
+}
 
-    const onChangeCallback = (e: ChangeEvent<HTMLSelectElement>) => {
-        if (onChangeOption) {
-            onChangeOption(+e.currentTarget.value); // Приводим value к числу
-        }
-    };
+const SuperSelect: React.FC<SuperSelectProps> = ({
+                                                     options,
+                                                     value,
+                                                     onChangeOption,
+                                                     className,
+                                                     id,
+                                                 }) => {
+    const mappedOptions = options?.map(o => (
+        <option key={o.id} value={o.id}>
+            {o.value}
+        </option>
+    ))
 
-    const finalSelectClassName = s.select + (className ? ' ' + className : '');
+    const onChangeCallback = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        onChangeOption?.(Number(e.currentTarget.value))
+    }
 
     return (
-        <select className={finalSelectClassName} onChange={onChangeCallback} {...restProps}>
+        <select
+            id={id}
+            className={className}
+            value={value}
+            onChange={onChangeCallback}
+        >
             {mappedOptions}
         </select>
-    );
-};
+    )
+}
 
-export default SuperSelect;
+export default SuperSelect

@@ -1,10 +1,13 @@
-import { configureStore } from "@reduxjs/toolkit";
+// src/s1-main/store.ts
+import { configureStore } from '@reduxjs/toolkit'
+import { themeReducer } from '../bll/themeReducer'
 
-// Создаем хранилище Redux
 export const store = configureStore({
-    reducer: {}, // Добавьте редюсеры сюда
-});
+    reducer: {
+        theme: themeReducer,
+    },
+})
 
-// Типизация RootState и AppDispatch
-export type RootState = ReturnType<typeof store.getState>;
-export type AppDispatch = typeof store.dispatch;
+export type RootState = ReturnType<typeof store.getState>
+export type AppDispatch = typeof store.dispatch
+

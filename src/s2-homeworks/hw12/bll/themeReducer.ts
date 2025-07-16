@@ -1,14 +1,24 @@
-const initState = {
+// src/s2-homeworks/hw12/bll/themeReducer.ts
+
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+
+export type ThemeStateType = {
+    themeId: number
+}
+
+const initialState: ThemeStateType = {
     themeId: 1,
 }
 
-export const themeReducer = (state = initState, action: any): any => { // fix any
-    switch (action.type) {
-        // дописать
+const themeSlice = createSlice({
+    name: 'theme',
+    initialState,
+    reducers: {
+        changeThemeId: (state, action: PayloadAction<number>) => {
+            state.themeId = action.payload
+        },
+    },
+})
 
-        default:
-            return state
-    }
-}
-
-export const changeThemeId = (id: number): any => ({ type: 'SET_THEME_ID', id }) // fix any
+export const themeReducer = themeSlice.reducer
+export const { changeThemeId } = themeSlice.actions
