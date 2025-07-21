@@ -1,5 +1,4 @@
 // src/s2-homeworks/hw12/bll/themeReducer.ts
-// src/s2-homeworks/hw12/bll/themeReducer.ts
 
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
