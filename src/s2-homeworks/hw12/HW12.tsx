@@ -1,5 +1,5 @@
 // src/s2-homeworks/hw12/HW12.tsx
-// src/s2-homeworks/hw12/HW12.tsx
+
 import React, { useEffect } from 'react'
 import s from './HW12.module.css'
 import s2 from '../../s1-main/App.module.css'
