@@ -1,4 +1,5 @@
 // src/s1-main/store.ts
+// src/s1-main/store.ts
 
 import { configureStore } from '@reduxjs/toolkit'
 import { themeReducer } from '../bll/themeReducer'
