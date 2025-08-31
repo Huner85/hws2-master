@@ -1,7 +1,32 @@
-.tech {
-
+.hw {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 .loading {
+    text-align: center;
+    font-size: 16px;
+    color: #888;
+    min-height: 20px; /* чтобы место под текст всегда было */
+}
 
+.tech {
+    background: #ffffff;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+    transition: background 0.3s;
+}
+
+.tech:hover {
+    background: #e8f4ff;
 }
