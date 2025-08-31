@@ -1,32 +1,26 @@
-.hw {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-    background-color: #f7f7f7;
-    border-radius: 10px;
-    max-width: 400px;
-    margin: 0 auto;
-}
-
+/* контейнер HW14 уже обернут в s2.hw из App.module.css */
 .loading {
     text-align: center;
     font-size: 16px;
-    color: #888;
-    min-height: 20px; /* чтобы место под текст всегда было */
+    color: #808080;
+    min-height: 24px; /* место под лоадер, чтобы верстка не дергалась */
 }
 
 .tech {
     background: #ffffff;
-    border: 1px solid #dcdcdc;
-    border-radius: 8px;
-    padding: 10px;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    padding: 10px 12px;
     font-size: 16px;
-    color: #333;
+    color: #333333;
     text-align: center;
-    transition: background 0.3s;
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    margin-bottom: 8px;
 }
 
 .tech:hover {
-    background: #e8f4ff;
+    background: #f2f8ff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
 }
+
